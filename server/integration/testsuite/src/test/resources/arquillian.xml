@@ -570,13 +570,28 @@
                 <property name="jmxDomain">${server.jmx.domain}</property>
             </configuration>
         </container>
+        <container qualifier="standalone-customtask" mode="manual">
+            <configuration>
+                <property name="javaHome">${server.jvm}</property>
+                <property name="jbossHome">${server1.dist}</property>
+                <property name="managementAddress">${node0.ip}</property>
+                <property name="serverConfig">testsuite/standalone-customtask.xml</property>
+                <!--debug props, mstodo: replace with commented version-->
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.node.name=node0 -Djboss.bind.address.management=${node0.ip} -Djboss.bind.address=${node0.ip} -Xrunjdwp:transport=dt_socket,address=5015,server=y,suspend=y</property>
+                <!--<property name="javaVmArguments">${server.jvm.args} -Djboss.node.name=node0 -Djboss.bind.address.management=${node0.ip} -Djboss.bind.address=${node0.ip}</property>-->
+                <property name="managementPort">9990</property>
+                <property name="waitForPorts">11211 11222 8080</property>
+                <property name="jmxDomain">${server.jmx.domain}</property>
+            </configuration>
+        </container>
         <container qualifier="standalone-customcs" mode="manual">
             <configuration>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
                 <property name="serverConfig">testsuite/standalone-customcs.xml</property>
-                <property name="javaVmArguments">${server.jvm.args} -Djboss.node.name=node0 -Djboss.bind.address.management=${node0.ip} -Djboss.bind.address=${node0.ip}</property>
+                <!--<property name="javaVmArguments">${server.jvm.args} -Djboss.node.name=node0 -Djboss.bind.address.management=${node0.ip} -Djboss.bind.address=${node0.ip} -Xrunjdwp:transport=dt_socket,address=5015,server=y,suspend=y</property>-->
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.node.name=node0 -Djboss.bind.address.management=${node0.ip} -Djboss.bind.address=${node0.ip}</property>                                                       mstodo
                 <property name="managementPort">9990</property>
                 <property name="waitForPorts">11211 11222 8080</property>
                 <property name="jmxDomain">${server.jmx.domain}</property>

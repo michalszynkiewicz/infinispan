@@ -122,6 +122,11 @@
             <artifactId>metainf-services</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-tasks</artifactId>
+            <version>${version.org.infinispan}</version>  <!--   mstodo remove commented out or uncomment-->
+        </dependency>
     </dependencies>
 
     <build>

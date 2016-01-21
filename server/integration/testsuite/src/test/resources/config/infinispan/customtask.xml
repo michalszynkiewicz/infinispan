@@ -1,0 +1,12 @@
+<!--&lt;!&ndash;-->
+<!--mstodo do sth if it's necessary-->
+        <subsystem xmlns="urn:infinispan:server:core:8.0">
+            <cache-container name="local" default-cache="default">
+                <local-cache name="default" start="EAGER">
+                    <!--<store name="customStore" class="org.infinispan.persistence.cluster.MyCustomCacheStore">-->
+                        <!--<property name="customProperty">10</property>-->
+                    <!--</store>-->
+                </local-cache>
+            </cache-container>
+        </subsystem>
+<!--&ndash;&gt;-->
